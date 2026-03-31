@@ -18,20 +18,20 @@ A unified, open-source React Native SDK that enables Solana dApps to connect to 
 
 ```mermaid
 graph TB
-    App[React Native App] --> RN[@solana-hw-wallet/react-native]
-    App --> SDK[@solana-hw-wallet/core]
+    App["React Native App"] --> RN["@solana-hw-wallet/react-native"]
+    App --> SDK["@solana-hw-wallet/core"]
     RN --> SDK
-    SDK --> AL[adapter-ledger]
-    SDK --> AK[adapter-keystone]
-    SDK --> AT[adapter-trezor]
-    SDK --> AS[adapter-safepal]
-    AL --> SOL[@solana-hw-wallet/solana]
+    SDK --> AL["adapter-ledger"]
+    SDK --> AK["adapter-keystone"]
+    SDK --> AT["adapter-trezor"]
+    SDK --> AS["adapter-safepal"]
+    AL --> SOL["@solana-hw-wallet/solana"]
     AK --> SOL
     AT --> SOL
     AS --> SOL
-    AL --> TR[@solana-hw-wallet/transports]
+    AL --> TR["@solana-hw-wallet/transports"]
     AK --> TR
-    SDK --> SH[@solana-hw-wallet/shared]
+    SDK --> SH["@solana-hw-wallet/shared"]
 ```
 
 ### Key Design Principles
