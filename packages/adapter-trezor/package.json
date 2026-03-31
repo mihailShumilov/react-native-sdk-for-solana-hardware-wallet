@@ -1,0 +1,39 @@
+{
+  "name": "@solana-hw-wallet/adapter-trezor",
+  "version": "0.1.0",
+  "description": "Trezor hardware wallet adapter for Solana hardware wallet SDK",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@solana-hw-wallet/core": "workspace:*",
+    "@solana-hw-wallet/shared": "workspace:*",
+    "@solana-hw-wallet/solana": "workspace:*",
+    "@solana-hw-wallet/transports": "workspace:*",
+    "@trezor/connect": "^9.4.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

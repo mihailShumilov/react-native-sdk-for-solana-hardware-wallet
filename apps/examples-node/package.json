@@ -1,0 +1,29 @@
+{
+  "name": "@solana-hw-wallet/examples-node",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Node.js example scripts for Solana hardware wallet SDK",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "example:derive": "tsx src/derive-accounts.ts",
+    "example:sign-message": "tsx src/sign-message.ts",
+    "example:sign-transaction": "tsx src/sign-transaction.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@solana-hw-wallet/core": "workspace:*",
+    "@solana-hw-wallet/solana": "workspace:*",
+    "@solana-hw-wallet/adapter-ledger": "workspace:*",
+    "@solana-hw-wallet/adapter-keystone": "workspace:*",
+    "@solana-hw-wallet/adapter-trezor": "workspace:*",
+    "@solana-hw-wallet/adapter-safepal": "workspace:*",
+    "@solana-hw-wallet/test-utils": "workspace:*",
+    "@solana/web3.js": "^1.95.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.5.0"
+  }
+}

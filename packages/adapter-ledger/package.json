@@ -1,0 +1,53 @@
+{
+  "name": "@solana-hw-wallet/adapter-ledger",
+  "version": "0.1.0",
+  "description": "Ledger hardware wallet adapter for Solana hardware wallet SDK",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@solana-hw-wallet/core": "workspace:*",
+    "@solana-hw-wallet/shared": "workspace:*",
+    "@solana-hw-wallet/solana": "workspace:*",
+    "@solana-hw-wallet/transports": "workspace:*",
+    "@ledgerhq/hw-app-solana": "^7.2.0",
+    "@ledgerhq/hw-transport": "^6.31.0"
+  },
+  "peerDependencies": {
+    "@ledgerhq/hw-transport-web-ble": "^6.0.0",
+    "@ledgerhq/hw-transport-node-hid": "^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@ledgerhq/hw-transport-web-ble": {
+      "optional": true
+    },
+    "@ledgerhq/hw-transport-node-hid": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@ledgerhq/hw-transport-web-ble": "^6.29.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
