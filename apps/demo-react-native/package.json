@@ -8,9 +8,10 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "pod-install": "cd ios && bundle exec pod install",
     "build": "echo 'React Native app - use start/android/ios scripts'",
     "lint": "eslint src/",
-    "clean": "rm -rf build android/build ios/build"
+    "clean": "rm -rf build android/build ios/build ios/Pods"
   },
   "dependencies": {
     "@solana-hw-wallet/core": "workspace:*",
@@ -21,11 +22,20 @@
     "@solana-hw-wallet/adapter-trezor": "workspace:*",
     "@solana-hw-wallet/adapter-safepal": "workspace:*",
     "@solana/web3.js": "^1.95.0",
-    "react": "^18.2.0",
-    "react-native": "^0.74.0"
+    "react": "18.2.0",
+    "react-native": "0.74.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native/babel-preset": "0.74.81",
+    "@react-native/metro-config": "0.74.81",
+    "@react-native/typescript-config": "0.74.81",
     "@types/react": "^18.2.0",
     "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

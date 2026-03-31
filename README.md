@@ -100,10 +100,12 @@ pnpm build
 pnpm test
 ```
 
-### Run Examples
+### Run Node.js Examples
+
+These use a mock adapter so no hardware device is required:
 
 ```bash
-# Derive accounts (uses mock adapter)
+# Derive accounts
 pnpm --filter @solana-hw-wallet/examples-node example:derive
 
 # Sign a message
@@ -112,6 +114,43 @@ pnpm --filter @solana-hw-wallet/examples-node example:sign-message
 # Sign a transaction
 pnpm --filter @solana-hw-wallet/examples-node example:sign-transaction
 ```
+
+### Run React Native Demo App
+
+**Prerequisites:**
+- Xcode (iOS) or Android Studio (Android)
+- CocoaPods (`gem install cocoapods`)
+- A physical device is recommended (BLE doesn't work in simulators)
+
+```bash
+# 1. Build all SDK packages first
+pnpm build
+
+# 2. Install iOS native dependencies
+cd apps/demo-react-native/ios
+pod install
+cd ..
+
+# 3a. Run on iOS
+npx react-native run-ios
+
+# 3b. Or run on Android
+npx react-native run-android
+```
+
+**Starting Metro bundler separately** (useful for debugging):
+
+```bash
+cd apps/demo-react-native
+npx react-native start --reset-cache
+```
+
+**Notes:**
+- The demo app includes all 4 wallet adapters (Ledger, Keystone, Trezor, SafePal)
+- BLE scanning requires a physical device — iOS Simulator does not support Bluetooth
+- QR-based wallets (Keystone, SafePal) require camera access
+- Trezor requires Trezor Bridge running on desktop
+- See `apps/demo-react-native/` for the full source
 
 ## API Reference
 

@@ -6,7 +6,7 @@ import { KeystoneAdapter } from '@solana-hw-wallet/adapter-keystone';
 import { TrezorAdapter } from '@solana-hw-wallet/adapter-trezor';
 import { SafePalAdapter } from '@solana-hw-wallet/adapter-safepal';
 import { HardwareWalletProvider } from '@solana-hw-wallet/react-native';
-import { WalletScreen } from './screens/WalletScreen.js';
+import { WalletScreen } from './screens/WalletScreen';
 
 /**
  * Demo React Native app for the Solana Hardware Wallet SDK.
